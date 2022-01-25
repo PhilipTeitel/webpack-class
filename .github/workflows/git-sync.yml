@@ -12,6 +12,8 @@ jobs:
         FROM_URL: ${{format('https://philip.teitel:{0}@github.com/PhilipTeitel/webpack-class.git', secrets.ABS_SITECUT_SYNC_PAT)}} 
         TO_URL: ${{format('https://philip.teitel:{0}@github.com/eagle-org/test-sync.git', secrets.ABS_SITECUT_SYNC_PAT)}}
     steps:
+      - name: branch_name
+        run: echo "Copying the ${{env.GITHUB_BASE_REF}} branch"
       - name: git-sync
         uses: wei/git-sync@v3
         with:
