@@ -1,7 +1,7 @@
 # .github/workflows/git-sync.yml
 
 on: push
-  branches:  # filter branches that activate this action
+  branches:
     - 'master'
     - 'dev'
 jobs:
